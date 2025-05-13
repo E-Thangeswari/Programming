@@ -1,0 +1,241 @@
+import java.util.*;
+class Average
+{
+    public static void main(String[] args)
+    {
+        int a[]={3,5,7,9,3};
+        int sum=0;
+        int i;
+        for(i=0;i<a.length;i++) 
+        {
+            sum=sum+a[i];
+        }
+        int average = sum/4;
+        System.out.println("Average;"+average);
+    }
+}
+//------------------------------------------------------------------------------------------------------------
+class Max
+{
+    public static void main(String[] args)
+    {
+        int a[]={3,5,4,6,8};
+        int temp ;
+        int i,j ;
+        for(i=0;i<a.length;i++)
+        {
+         for(j=i+1;j<a.length;j++)
+            {
+            if(a[i]>a[j])
+            {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+        }
+    System.out.println(a[a.length-1]);
+}
+}
+//-------------------------------------------------------------------------------------------------------------
+class Min
+{
+    public static void main(String[] args)
+    {
+        int a[]={7,8,10,4,};
+        int temp;
+        int i,j=0;
+        for (i=0;i<a.length;i++)
+        {
+            for(j=i+1;j<a.length;j++)
+            {
+            if(a[i]>a[j]);
+            {
+            temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+        }
+            }
+        }
+        System.out.print(a[0]);
+}
+}
+//-------------------------------------------------------------------------------------------------------------
+class K 
+{
+    public static void main(String[] args)
+    {
+        int a[]={2,3,4,5,6};
+        int ec=0;
+        int oc=0;
+        for(int i=0;i<a.length;i++)
+        {
+           if(i%2==0)
+           ec++;   
+        }
+        for(int i =0;i<a.length;i++)
+        {
+            if(i%2==1)
+            oc++;
+        }
+          System.out.println("Number of the even numbers " + ec);
+          System.out.println("Number of the odd numbers " +  oc) ;  
+
+        }
+    }
+//------------------------------------------------------------------------------------------------------------
+class Evenindex
+{
+    public static void main(String[] args)
+    {
+        int a[]={2,4,6,8,10,12,14};
+        System.out.println("Even values at even index");
+        for (int i=0;i<a.length;i++)
+        {
+            if(i%2==0 & a[i]%2==0)
+            System.out.println(a[i]);
+        }
+    }
+}
+//--------------------------------------------------------------------------------------------------------------
+class Sorted
+{
+    public static void main(String[] args)
+    {
+        int a[]={1,1,3,3,2,2,1,1};
+        System.out.print("Original array :");
+        for(int i =0;i<a.length;i++)
+        System.out.println(a[i]+"");
+         int temp = 0;
+        for(int i =0;i<a.length;i++)
+        {
+            for(int j =i+1;j<a.length;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                 }
+            }
+        }
+        System.out.println("Sorted array :");
+        for(int i = 0;i<a.length;i++)
+        System.out.print(a[i]+" ");
+    }
+}
+//-----------------------------------------------------------------------------------------------------------
+class Second
+{
+    public static void main(String[] args)
+    {
+        int a[]={12,35,1,10,34};
+        int temp;
+        for(int i=0;i<a.length-1;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]<a[j])
+                {
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        System.out.println("Second largest element=" +(a[1]));
+        }
+    }
+//--------------------------------------------------------------------------------------------------------------------
+class Merge
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int i=0;
+        System.out.println("Enter the no of Elements in array1:");
+        int n=sc.nextInt();
+        
+        int arr1[]=new int[n];
+        System.out.println("Enter the array1 elements:");
+        for(i=0;i<n;i++)
+        {
+            arr1[i]=sc.nextInt();
+        }
+        System.out.println("Enter the no of Elements in array2:");
+        int n1=sc.nextInt();
+        
+        int arr2[]=new int[n1];
+        System.out.println("Enter the array2 elements:");
+        for(i=0;i<n;i++)
+        {
+            arr2[i]=sc.nextInt();
+        }
+        int arr3[]=new int[n+n1];
+        for(i=0;i<n;i++)
+        {
+            arr3[i]=arr1[i];
+        }
+        for(i=0;i<n1;i++)
+        {
+            arr3[n]=arr2[i];
+            n++;
+        }
+        System.out.println("The Merged Array");
+        for(i=0;i<arr3.length;i++)
+        System.out.print(arr3[i]+" ");
+    }
+}
+//-----------------------------------------------------------------------------------------------------------
+class Frequency
+{
+    public static void main(String[] args)
+    {
+        int arr[]={2,3,2,5,3};
+        int visited =-1;
+        for(int i =0;i<arr.length;i++)
+        {
+           if (arr[i]!=-1)
+           {
+            int count =1;
+            for (int j=i+1;j<arr.length;j++)
+            {
+               if(arr[i]==arr[j])
+               {
+                count++;
+                arr[j]=visited;
+               }
+           }
+           System.out.println(arr[i] + "->" + count);
+        }
+         } 
+    }
+}
+//-----------------------------------------------------------------------------------------------------------
+class Duplicates
+{
+    public static void main(String[] args)
+    {
+        int[] arr={1,1,2,2,3,4,4,5};
+        int[] newArr=new int[arr.length];
+        newArr[0]=arr[0];
+        int lengthcount=1;
+        System.out.print(arr[0]+"");
+        for(int i =1;i<arr.length;i++)
+        {
+        int count =0;
+        for(int j=0;j<i;j++)
+        {
+          if(arr[i]==arr[j]) 
+          {
+           count++;
+          } 
+        }
+       if(count==0)
+       {
+        System.out.println(arr[i]+"");
+        newArr[lengthcount]=arr[i];
+        lengthcount++;
+       } 
+        }
+    }
+}
